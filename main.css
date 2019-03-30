@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(248, 249, 251);
+    font-family: 'Nunito', sans-serif;
+}
+
+.root-parent {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.root2-parent {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    margin-top: 100px;
+    opacity: 0;
+}
+
+.root2 {
+    background: white;
+    width: 882px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 40px 50px 0 #EFF0F4;
+    border-radius: 4px;
+}
+
+.logo-wrapper {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.root2 h4{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.root {
+    position: relative;
+    margin: 0 auto;
+    width: 882px;
+    display: grid;
+    grid-template-rows: 200px min-content 1fr;
+    z-index: 10;
+}
+
+.form {
+    grid-row: 3;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 40px 50px 0 #EFF0F4;
+    margin-bottom: 200px;
+    z-index: 10;
+}
+
+.form-header span:last-child {
+    float: right;
+}
+
+.form-header {
+    padding: 20px;
+}
+
+.form-content {
+    padding: 40px;
+    padding-top: 20px;
+}
+
+.f-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.f-control > * {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #5964FF;
+    opacity: 0.9;
+    width: 100%;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    height: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    color: white;
+    font-size: 16px;
+    padding: 20px;
+    line-height: 0;
+    font-weight: bold;
+    letter-spacing: 1.05px;
+    bottom: 75px;
+    position: absolute;
+}
+
+.transition-remove {
+    height: auto;
+    overflow: hidden;
+    animation: hide 1s 1 normal forwards;
+}
+
+.transition-start {
+    height: auto;
+    overflow: hidden;
+    animation: show 1s 1 normal forwards;
+}
+
+@keyframes hide {
+    from {height: 100%;}
+    to {height: 0%;}
+}
+
+@keyframes show {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.lg {
+    width: 400px;
+}
+
+.lg-padded {
+    padding: 40px;
+    padding-top: 20px;
+}
+
+.md {
+    width: 200px;
+}
+
+.sm {
+    width: 70px;
+}
+
+.section-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+hr {
+    border-color: white;
+    height: 1px;
+    margin-top: 0;
+    color: white;
+    box-sizing: border-box;
+}
+
+.list {
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page-header {
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    grid-row: 1;
+    text-align: start;
+    width: 882px;
+    margin: 0 auto;
+}
+
+.calendar {
+    grid-row: 1 / 3;
+    border: 1px solid #DADADA;
+    border-radius: 4px;
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.calendar-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.head-cell.cell {
+    color: #5964FF;
+    font-weight: bold;
+}
+
+.cell.active {
+    border: 1px solid blue;
+}
+
+.day-cell.cell {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.calendar-view .row-1 {
+    grid-column: 1;
+}
+
+.calendar-view .row-2 {
+    grid-column: 2
+}
+
+.calendar-view .row-3 {
+    grid-column: 3
+}
+
+.calendar-view .row-4 {
+    grid-column: 4
+}
+
+.calendar-view .row-5 {
+    grid-column: 5
+}
+
+.calendar-view .row-6 {
+    grid-column: 6
+}
+
+.calendar-view .row-7 {
+    grid-column: 7
+}
+
+.cell {
+    height: 25px;
+    line-height: 25px;
+    width: 100%;
+}
+
+.cell:not(:last-child) {}
+
+.row .cell:not(:first-child) {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.row .cell:not(.head-cell):not(.day-cell):not(.disabled):hover {
+    color: blue;
+    cursor: pointer;
+}
+
+.cell.disabled {
+    color: grey;
+    cursor: not-allowed;
+}
+
+.row .cell.disabled:hover {
+    cursor: not-allowed;
+}
+
+
+.list-item {
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 200px 1fr 100px;
+    padding: 40px;
+    height: 125px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 40px 50px 0 #EFF0F4;
+    box-sizing: border-box;
+    height: 200px;
+}
+
+.list-item.done:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.image {
+    grid-row: 1 / 4;
+    grid-template-columns: 1;
+    margin-right: 20px;
+    box-shadow: 0 5px 20px 0 rgba(174,174,174,0.5);
+    border-radius: 5px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.header {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.description {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 16px;
+    font-weight: regular;
+}
+
+.price {
+    color: #6F6F6F;
+    font-size: 16px;
+
+    grid-column: 2;
+    grid-row: 3;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+.controls {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+label {
+    position:relative;
+    display:block;
+    width:100%;
+    min-height: 45px;
+  }
+
+  .placeholder {
+    position:absolute;
+    display:block;
+    top: 23px;
+    z-index:2;
+    font-size: 12px;
+    transition:all 200ms ease-in;
+    width: 100%;
+    cursor: text;
+    top:0;
+  }
+
+input {
+    position:absolute;
+    top: 15px;
+    z-index:1;
+    width:100%;
+    font-size: 14px;
+    border:0;
+    border-bottom: 1px solid grey;
+    transition: border-color 200ms ease-in;
+    outline:none;
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    height: 25px;
+}
+
+input:focus + .placeholder,
+input:valid + .placeholder {
+    cursor:inherit;
+    font-size: 12px;
+}
+
+input:focus, input:valid {
+}
+
+.form-input {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .date-select {
+      width: 150px;
+  }
+
+  .background {
+      position: absolute;
+      width: 100%;
+      overflow: hidden;
+      left: 0;
+      top: 0;
+      height: 350px;
+      z-index: 1;
+  }
+
+  .circle-1, .circle-4 {
+    background-color: #0081FF;
+  }
+
+  .circle-1 {
+      left: -15%;
+      z-index: 2;
+  }
+
+  .circle-2 {
+    background-color: rgba(190,223,255);
+    left: 20%;
+  }
+
+  .circle-3 {
+    background-color: #60ACF7;
+    left: 50%;
+  }
+
+  .circle-4 {
+      left: 75%;
+      z-index: 2;
+  }
+
+  .circle {
+    width: 700px;
+    height: 700px;
+    top: -400px;
+    border-radius: 100%;
+    position: absolute;
+  }
+
+  h4 {
+      font-size: 26px;
+      font-weight: normal;
+      color: white;
+      display: flex;
+  }
+
+  .logo-img {
+      margin-right: 10px;
+  }
+
+  h2 {
+      font-size: 28px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 0;
+  }
+
+  h5 {
+      font-size: 20px;
+      font-weight: normal;
+      margin-top: 0;
+  }
+
+  .styled-checkbox {
+    position: absolute;
+    opacity: 0;
+    left: -200px;
+  }
+  .styled-checkbox + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    font-size: 18px;
+    color: #212121;
+  }
+  .styled-checkbox + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 1.5px solid #BFC9C2;
+    border-radius: 3px;
+  }
+
+  .styled-checkbox:checked + label:before {
+    background-color: #378752;
+  }
+  .styled-checkbox:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+  .styled-checkbox:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+  .styled-checkbox:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .checkbox-parent {
+      position: absolute;
+  }
+  
